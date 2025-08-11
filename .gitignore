@@ -1,0 +1,36 @@
+# Node & package managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+out/
+dist/
+coverage/
+.nyc_output/
+
+# VS Code/Editor
+.vscode/
+.history/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSIX packages
+*.vsix
+
+# TypeScript
+*.tsbuildinfo
+
+# Env & local config
+.env
+.env.*
+
+# Misc
+logs/
+tmp/
+
