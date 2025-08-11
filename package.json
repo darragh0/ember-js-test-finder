@@ -3,7 +3,7 @@
   "displayName": "Ember JS Test Finder",
   "icon": "images/logo.png",
   "description": "Quickly find and open test files for Ember components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "darragh0",
   "license": "MIT",
   "homepage": "https://github.com/darragh0/ember-js-test-finder/blob/main/README.md",
