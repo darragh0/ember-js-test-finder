@@ -1,0 +1,47 @@
+{
+  "name": "ember-js-test-finder",
+  "displayName": "Ember JS Test Finder",
+  "description": "Quickly find and open test files for Ember components",
+  "version": "1.0.0",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ember-js-test-finder.findTests",
+        "title": "Find Tests for Current File"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "ember-js-test-finder.findTests",
+        "key": "ctrl+t ctrl+t",
+        "mac": "cmd+t cmd+t",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/prompts": "^2.4.9",
+    "@types/vscode": "^1.74.0",
+    "boxen": "^8.0.1",
+    "chalk": "^5.5.0",
+    "ora": "^8.2.0",
+    "prompts": "^2.4.2",
+    "typescript": "^5.9.2",
+    "vsce": "^1.103.1"
+  }
+}
