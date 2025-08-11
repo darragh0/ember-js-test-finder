@@ -3,7 +3,7 @@
   "displayName": "Ember JS Test Finder",
   "description": "Quickly find and open test files for Ember components",
   "version": "1.0.0",
-  "publisher": "local",
+  "publisher": "darragh0",
   "license": "MIT",
   "engines": {
     "vscode": "^1.75.0"
