@@ -1,50 +1,16 @@
 # Ember JS Test Finder Extension
 
+[![Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/darragh0.ember-js-test-finder?logo=visual-studio-code&label=version)](https://marketplace.visualstudio.com/items?itemName=darragh0.ember-js-test-finder)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/darragh0.ember-js-test-finder?logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=darragh0.ember-js-test-finder)
+[![Rating](https://img.shields.io/visual-studio-marketplace/r/darragh0.ember-js-test-finder?logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=darragh0.ember-js-test-finder)
+
 A VS Code extension to quickly find and open test files for Ember.js projects
 
 ## Features
 
 - Hold `Cmd` (Mac) or `Ctrl` (Win/Linux) and double tap `T` to find tests for the current file
-- Single test file opens immediately
-- Multiple test files show a selection list
-
-## Installation
-
-### Quick Install (Recommended)
-
-Run the following and then restart VS Code / Cursor
-
-```bash
-cd ~/test-finder && ./install.sh --cursor
-# or
-cd ~/test-finder && ./install.sh --code
-```
-
-The installer is safe to run repeatedly. It will:
-
-- Detect changes in `src/**/*.ts` and recompile only when needed
-- Copy the fresh build and README into your editor's extensions folder
-- Ensure `find-all-tests.sh` is executable
-- Prompt you to reload your editor for changes to take effect
-
-### Manual Installation
-
-Run the following and then restart VS Code / Cursor
-
-```bash
-cd ~/test-finder && npm install && npm run compile
-EXT_DIR=~/.vscode/extensions/local.ember-js-test-finder-1.0.0
-rm -rf "$EXT_DIR" && mkdir -p "$EXT_DIR"
-cp -r out "$EXT_DIR/" && cp package.json README.md find-all-tests.sh "$EXT_DIR/"
-chmod +x "$EXT_DIR/find-all-tests.sh"
-```
-
-### Uninstall
-
-```bash
-rm -rf ~/.vscode/extensions/local.ember-js-test-finder-1.0.0
-rm -rf ~/.cursor/extensions/local.ember-js-test-finder-1.0.0
-```
+- A Single test file opens immediately
+- Multiple test files show a selection dialog
 
 ## Usage
 
@@ -77,20 +43,6 @@ The extension follows Ember's standard test conventions:
 - **Transforms** - Data transform tests
 - **Utils** - Utility function tests
 
-### Both Integration and Unit Tests
-
-- Components, helpers, and modifiers can have both test types
-- The extension will find all existing test files
-
-## How It Works
-
-The extension:
-
-1. Detects your Ember project root by finding the `app/` and `tests/` directories
-2. Determines the file type based on its location in the `app/` directory
-3. Looks for corresponding test files following Ember conventions
-4. Supports both `.js` and `.ts` files
-
 ## Error Messages
 
 - **No test files found**: The file has no associated test files
@@ -105,7 +57,6 @@ To modify the extension:
 
 1. Edit files in the `src/` directory
 2. Reinstall to auto-compile and deploy (see [Installation](#installation))
-
 3. Reload your editor window (Command Palette → "Developer: Reload Window")
 
 ## Customization
@@ -116,3 +67,36 @@ To change the keyboard shortcut:
 2. Search for "Keyboard Shortcuts"
 3. Search for "Find Tests for Current File"
 4. Click the pencil icon to edit the shortcut
+
+## Manual Installation
+
+Only needed if you want to force a reinstall locally. After the extension is installed from the marketplace, you can run the bundled installer from the extension folder.
+
+- **Find the installed extension folder**
+
+  - VS Code: Command Palette → "Extensions: Open Extensions Folder" (or `~/.vscode/extensions`)
+  - Cursor: Command Palette → "Extensions: Open Extensions Folder" (or `~/.cursor/extensions`)
+
+- **From a terminal, navigate to the latest installed version and run the installer**
+
+  VS Code:
+
+  ```bash
+  EXT_DIR=$(ls -d ~/.vscode/extensions/darragh0.ember-js-test-finder-* | sort -V | tail -1)
+  cd "$EXT_DIR"
+  ./install.sh --code
+  ```
+
+  Cursor:
+
+  ```bash
+  EXT_DIR=$(ls -d ~/.cursor/extensions/darragh0.ember-js-test-finder-* | sort -V | tail -1)
+  cd "$EXT_DIR"
+  ./install.sh --cursor
+  ```
+
+- **What the installer does**
+  - Detects changes and compiles if needed
+  - Copies the fresh build into your editor’s extensions folder
+  - Ensures `find-all-tests.sh` is executable
+  - Prompts you to reload your editor
